@@ -1,0 +1,61 @@
+POST http://localhost:5000/api/auth/register
+
+Select Body → raw → JSON from the dropdown.
+Add the following JSON data (adjust the values as needed)
+
+{
+  "email": "testuser@gmail.com",
+  "username": "testuser",
+  "password": "password123"
+}
+
+POST http://localhost:5000/api/auth/login
+
+Select Body → raw → JSON.
+Add the following JSON data
+
+{
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+POST http://localhost:5000/api/questions/
+
+Go to the Authorization tab.
+Select Bearer Token from the dropdown.
+Paste the token received from the login response.
+
+
+{
+  "title": "How do I test my API?",
+  "description": "I am trying to learn how to test my API with Postman.",
+  "tags": ["API", "Postman", "Express.js"]
+}
+
+GET http://localhost:5000/api/questions/
+
+POST http://localhost:5000/api/answers/:questionId
+
+Replace :questionId with the actual question ID from the question you posted earlier.
+For example, if the question ID is 646fc871bc0d1b73fa83b1f5, the URL would be 
+http://localhost:5000/api/answers/646fc871bc0d1b73fa83b1f5
+
+{
+  "content": "This is an answer to the question."
+}
+
+GET http://localhost:5000/api/answers/:questionId
+URL: GET http://localhost:5000/api/answers/:questionId
+Replace :questionId with the actual question ID.
+
+POST http://localhost:5000/api/comments/:answerId
+Replace :questionId and :answerId with actual values from previous requests.
+Authorization:
+Use the same token from Step 3 in the Bearer Token field.
+Body:
+Select Body → raw → JSON.
+Add the following JSON data:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MThhZjBkNzJjMzMxMGU3NjdkZTFiOSIsImlhdCI6MTcyOTY3MDk0MywiZXhwIjoxNzI5Njc0NTQzfQ.WQP4mJ6n2Xy7mK7HUHXdUrF2jdojR2mRjjMqiFI7Heg
+
+http://localhost:5000/api/comments/671632d5de110bce7690cb3f/6718b8acc4c5c37c49410ec2
